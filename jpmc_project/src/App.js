@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import LogIn from './Components/LogIn/LogIn'
-import Dashboard from './Components/Dashboard/Dashboard'
+import LogIn from './Components/LogIn'
+import Dashboard from './Components/Dashboard'
+import 'materialize-css/dist/css/materialize.min.css';
 
 
 

@@ -1,0 +1,32 @@
+.imgStyle1 {
+    width: 50%;
+    vertical-align: middle;
+    object-fit: cover;
+
+}
+.imgStyle2 {
+    width: 50%;
+    vertical-align: middle;
+    object-fit: cover;
+
+}
+.iconStyle1 {
+    display: inline;
+    vertical-align: top;
+    object-fit: cover;
+    color: white;
+    
+}
+.iconStyle2 {
+    display: inline;
+    vertical-align: top;
+    object-fit: cover;
+    color: white;
+    
+}
+.countStyle {
+    display:inline;
+    font-size: 1.75vw;
+    font-weight: bold;
+    object-fit: cover;
+}

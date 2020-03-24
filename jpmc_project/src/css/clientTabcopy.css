@@ -1,0 +1,70 @@
+
+.client{
+    background-color: transparent;
+    width: 100%;
+    
+}
+.client button{
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right-color: transparent;
+    border-right-width: 0px;
+    
+    cursor: pointer;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    
+    opacity: 0.7;
+    text-align: left;
+}
+.client :hover{
+    opacity: 1;
+}
+
+.clientClicked{
+    background-color: transparent;
+    width: 100%;
+    
+}
+.clientClicked button{
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    background-color: #90a4ae;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right-color: blue ;
+    border-right-width: 8px;
+    box-shadow: 2px 2px 2px #888888;
+    
+    cursor: pointer;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    
+    opacity: 0.7;
+    text-align: left;
+}
+
+.clientClicked :hover{
+    opacity: 1;
+}
+.clientName{
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom: 8px;
+}
+.clientTabInfo{
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.senderName{
+    font-weight: bold;
+    font-size: 12px;
+}

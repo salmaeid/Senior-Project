@@ -1,0 +1,11 @@
+.full-width {
+    
+    min-height: 100vh !important;
+    overflow-y: hidden; 
+    overflow-x: hidden;
+    
+}
+
+body{
+    border: 1px solid transparent;
+}
