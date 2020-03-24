@@ -1,9 +1,27 @@
+.sideWidth{
+    width: 5%;
+}
+.headerHeight{
+    max-height: 50px;
+    padding-left: 5px !important;
+}
+.headerIcon{
+
+    display: inline;
+    object-fit: cover;
+}
+.headerText{
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
 .full-width {
     
     min-height: 100vh !important;
     overflow-y: hidden; 
     overflow-x: hidden;
-    
+    margin-right: 33px; 
 }
 
 body{

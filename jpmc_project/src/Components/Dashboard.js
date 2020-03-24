@@ -2,31 +2,56 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css'
+import M  from 'materialize-css';
 import ClientTabs from './ClientTabs'
 import AppsView from './AppsView'
 import '../css/dashboardcss.css'
-import Nav from './Nav'
+import Sidebar from './Sidebar'
+import clientIcon from '../img/client.png'
+import chatIcon from '../img/chat.png'
+import appsIcon from '../img/apps.png'
+
+
+
+
 export class Dashborad extends Component {
+
+    
     handleClick = (e) => {
         console.log('hello');
     }
     render() {
         return (
-            <div className="row">
-                <div className= "col s1 m1 l1 blue darken-4 z-depth-5 full-width">
-                    <Nav/>
-                </div>
 
-                <div className= "col s3 grey lighten-1 z-depth-5 full-width no-padding">
+            <div className="row">
+
+                <Sidebar/>
+
+                <div className= "col s3 offset-s1 grey lighten-1 z-depth-4 full-width no-padding">
+
+                    <div className="section grey darken-1 no-padding headerHeight">
+                        <img className="headerIcon" align="left" src={clientIcon}></img>
+                        <p className="headerText">Clients</p>
+                    </div>
                     <ClientTabs/>
                 </div>
                 
 
-                <div className= "col s4 grey lighten-1 z-depth-1 full-width">
+                <div className= "col s3 grey lighten-1 z-depth-4 full-width no-padding">
+
+                    <div className="section grey darken-1 no-padding headerHeight">
+                        <img className="headerIcon" align="left" src={chatIcon}></img>
+                        <p className="headerText">Chat</p>
+                    </div>
                 </div>
 
-                <div className= "col s4 grey lighten-1 z-depth-1 full-width">
-                  <AppsView/>
+                <div className= "col s4 grey lighten-1 z-depth-4 full-width no-padding">
+                    <div className="section grey darken-1  no-padding headerHeight">
+                        <img className="headerIcon" align="left" src={appsIcon}></img>
+                        <p className="headerText"> Apps</p>
+                    </div>
+                    <AppsView/>
                     
                 </div>
     
