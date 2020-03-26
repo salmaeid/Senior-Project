@@ -12,3 +12,16 @@ export const selectClient = (id) => {
         id: id
     }
 }
+
+export const logIn = (credentials) => {
+    return{
+        type: 'LOG_IN',
+        credentials: credentials
+    }
+}
+
+export const logOut = () => {
+    return{
+        type: 'LOG_OUT'
+    }
+}

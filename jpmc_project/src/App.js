@@ -3,10 +3,13 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import LogIn from './Components/LogIn'
 import Dashboard from './Components/Dashboard'
 import 'materialize-css/dist/css/materialize.min.css';
-
+import 'materialize-css'
+import M  from 'materialize-css';
 
 
 class App extends Component {
+
+ 
   render(){
 
     return (

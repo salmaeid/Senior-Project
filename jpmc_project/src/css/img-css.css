@@ -19,9 +19,18 @@
     color: white;
     
 }
+
+.iconStyle2:hover{
+    color: rgb(187, 186, 186);
+    cursor: pointer;
+    text-shadow: gray;
+
+}
 .countStyle {
     display:inline;
     font-size: 1.25vw;
     font-weight: bold;
     object-fit: cover;
+    color: white;
 }
+

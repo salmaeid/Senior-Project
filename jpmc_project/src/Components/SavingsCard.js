@@ -3,15 +3,29 @@ import {connect} from 'react-redux'
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css'
 import M  from 'materialize-css';
+import '../css/pop-css.css'
+
 
 export class SavingsCard extends Component {
+
     render() {
-        const {currentID, currentApps, currentName, currentChechings, currentSavings, currentMortgage} = this.props
+        const {currentID, currentApps, currentName, currentAddress, currentSavings} = this.props
         return (
             
                 <li>
                     <div className="collapsible-header"><i className="material-icons">S</i>Savings</div>
-                    <div className="collapsible-body"><span>Hello</span></div>
+                    <div className="collapsible-body popback">
+
+                        <div>
+                        <div className = "popwidth"><b>Account holder: </b> {currentName}</div>
+                        <div className = "popwidth"><b>Account number: </b> {currentSavings[0].accountNo}</div>
+                        <div className = "popwidth"><b>Address: </b> {currentAddress}</div>
+                        <div className = "popwidth"><b>Routing number: </b> {currentSavings[0].routing}</div>
+                        <div className = "popwidth"><b>Balance: </b> {currentSavings[0].balance}</div>
+                        <div className = "popwidth"><b>Interest rate: </b> {currentSavings[0].intrate}</div>
+                    </div>
+
+                    </div>
                 
                 
                 </li>
@@ -24,9 +38,8 @@ const mapStateToProps = (state) => {
         currentID: state.currentID,
         currentApps: state.currentApps,
         currentName: state.currentName,
-        currentChechings: state.currentChechings,
+        currentAddress: state.currentAddress,
         currentSavings: state.currentSavings,
-        currentMortgage: state.currentMortgage
     }
 
 }

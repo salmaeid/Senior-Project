@@ -1,34 +1,42 @@
 const initState = {
     clients:[
-        {id: '1', userName: 'salmaeid', clicked: false, typing: true, lastMessage: 'hello', apps:[true, true, false] },
-        {id: '2', userName: 'rudy', clicked: false,  typing: false, lastMessage: 'I can not find it', apps:[true, false, true] },
-        {id: '3', userName: 'fafa', clicked: false,  typing: true, lastMessage: 'yo', apps:[true, false, true] },
-        {id: '4', userName: 'Nosa', clicked: false,  typing: false, lastMessage: 'yo', apps:[true, true, true] }
+        {id: '1', userName: 'Salma Eid', address:'2 Henry Avenue Macomb, MI 48042',clicked: false, typing: true, lastMessage: 'hello', apps:[true, true, false] },
+        {id: '2', userName: 'Rudy Prieto', address:'94 Strawberry Rd. Millington, TN 38053', clicked: false,  typing: false, lastMessage: 'I can not find it', apps:[true, false, true] },
+        {id: '3', userName: 'Joshua Remington', address:'563 El Dorado Street Orchard Park, NY 14127', clicked: false,  typing: true, lastMessage: 'yo', apps:[true, true, true] }
     ],
 
     checkings:[
-        {id: '1', amount:1000},
-        {id: '2', amount:2400},
-        {id: '3', amount:5000},
-        {id: '4', amount:5000}
+        {id: '1', accountNo: '98818862',  routing: '34552109', intrate: '0.26%' , balance:'$15,051.50'},
+        {id: '2', accountNo: '93828834',  routing: '34552109', intrate: '0.22%' , balance:'$54,687.96'},
+        {id: '3', accountNo: '96815872',  routing: '34552109', intrate: '0.16%' , balance:'$6,140.34'}
+
     ],
 
     savings:[
-        {id: '1', amount:1200},
-        {id: '4', amount:5000}
+        {id: '1', accountNo: '91215360',  routing: '90098766', intrate: '0.13%' , balance:'$60,051.50'},
+        {id: '3', accountNo: '98318489',  routing: '90098766', intrate: '0.17%' , balance:'$10,233.00'}
 
     ],
 
     mortgage:[
-        {id: '2', amount:10000},
-        {id: '3', amount:5040},
-        {id: '4', amount:5000}
+        {id: '2', accountNo: '95245372',  intrate: '0.25%' , rembalance:'$5,020.00', payfee: '$500.00', nextpaydate:'4/1/2020'},
+        {id: '3', accountNo: '91325665',  intrate: '0.15%' , rembalance:'$10,500.00', payfee: '$700.00', nextpaydate: '4/24/2020'}
     ],
+
+    auth:[
+        {userID: 'salmaeid', password: '1234'},
+        {userID: 'userExample', password: '1234qwer' }
+    ],
+    
+    path: '/',
+    authError: null,
+    
 
     currentID: null,
     currentName: null,
+    currentAddress: null,
     currentSavings: null,
-    currentChechings: null,
+    currentCheckings: null,
     currentMortgage: null,
     currentApps:[false, false, false],
 
@@ -60,6 +68,7 @@ const rootReducer = (state = initState, action) => {
         let newCheckings;
         let newMortgae;
         let newName;
+        let newAddress;
         // for(let i = 0; i < newClients.length; i++){
         //     if (newClients[i].id !== action.id) {
         //         newClients[i].clicked.back = 'transparent'; 
@@ -76,6 +85,7 @@ const rootReducer = (state = initState, action) => {
                 newClients[i].clicked = true;
                 newApps = [...newClients[i].apps];
                 newName = newClients[i].userName;
+                newAddress = newClients[i].address;
 
                 if (newApps[0]) {
                     newCheckings = state.checkings.filter(client => {
@@ -103,11 +113,58 @@ const rootReducer = (state = initState, action) => {
             currentID: action.id,
             currentApps: newApps,
             currentName: newName,
-            currentChechings: newCheckings,
+            currentAddress: newAddress,
+            currentCheckings: newCheckings,
             currentSavings: newSavings,
             currentMortgage: newMortgae
             
         }
+    }
+
+    if(action.type === 'LOG_IN'){
+
+        console.log('creds: ', action.credentials)
+        let found = -1;
+        let newPath = '/';
+        let errorMessage = null;
+        for(let x = 0; x < state.auth.length; x++){
+            
+            if ( (state.auth[x].userID === action.credentials.userID) && (state.auth[x].password === action.credentials.password) ) {
+                found = 1;
+                break;
+                
+            }
+        }
+        console.log(found)
+        if(found === 1){
+            newPath = '/Dashboard'
+        }
+        else if (found === -1) {
+            errorMessage = 'Incorrect user ID or password'
+        } 
+
+        console.log(newPath)
+            
+        return{
+            ...state,
+            path: newPath,
+            authError: errorMessage
+
+            
+        }
+
+
+    }
+
+    if(action.type === 'LOG_OUT'){
+
+        let newPath = '/';
+
+        return{
+            ...state,
+            path: newPath
+        }
+
     }
     
     return state;

@@ -1,0 +1,11 @@
+.centerStyle1{
+
+    min-height: 150px ;
+}
+body .back{
+    background-image: url("../img/chase-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+    
+}
+

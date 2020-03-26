@@ -7,16 +7,14 @@ import SavingsCard from './SavingsCard'
 import CheckingsCard from './CheckingsCard'
 import MortgageCard from './MortgageCard'
 
-
-
-
-
-
 export class AppsView extends Component {
 
     componentDidMount(){
+        
+        M.AutoInit();
         document.addEventListener('DOMContentLoaded', function() {
-            var options;
+            
+            var options ={};
             var elems = document.querySelectorAll('.collapsible');
             var instances = M.Collapsible.init(elems, options);
           });
@@ -24,11 +22,11 @@ export class AppsView extends Component {
     render() {
 
         
-        const {currentID, currentApps, currentName, currentChechings, currentSavings, currentMortgage} = this.props
+        const {currentID, currentApps, currentName, currentCheckings, currentSavings, currentMortgage} = this.props
         console.log('ID: ', currentID);
         console.log('Apps: ', currentApps);
         console.log('Name: ', currentName);
-        console.log('Chekings: ' , currentChechings);
+        console.log('Checkings: ' , currentCheckings);
         console.log('Savings: ' , currentSavings);
         console.log('Mortgage: ' , currentMortgage);
 
@@ -59,7 +57,8 @@ export class AppsView extends Component {
 
         return(
 
-            <ul className="collapsible popout">
+            <ul className="collapsible popout" >
+
                 {appList}
                 
             </ul>
@@ -72,7 +71,7 @@ const mapStateToProps = (state) => {
         currentID: state.currentID,
         currentApps: state.currentApps,
         currentName: state.currentName,
-        currentChechings: state.currentChechings,
+        currentCheckings: state.currentCheckings,
         currentSavings: state.currentSavings,
         currentMortgage: state.currentMortgage
     }
