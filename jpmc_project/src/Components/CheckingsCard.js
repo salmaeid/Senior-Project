@@ -4,6 +4,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css'
 import M  from 'materialize-css';
 import '../css/pop-css.css'
+import check from '../img/check.png'
 
 export class CheckingsCard extends Component {
     
@@ -12,7 +13,9 @@ export class CheckingsCard extends Component {
         console.log('current checkings: ', currentCheckings);
         return (
             <li>
-                    <div className="collapsible-header"><i className="material-icons">C</i>Checkings</div>
+                    <div className="collapsible-header">
+                    <img className="iconCards" align="left" src={check}></img>Checkings
+                    </div>
                     <div className="collapsible-body popback">
                         <div>
                             <div className = "popwidth"><b>Account holder: </b> {currentName}</div>

@@ -4,6 +4,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css'
 import M  from 'materialize-css';
 import '../css/pop-css.css'
+import save from '../img/save.png'
 
 
 export class SavingsCard extends Component {
@@ -13,7 +14,9 @@ export class SavingsCard extends Component {
         return (
             
                 <li>
-                    <div className="collapsible-header"><i className="material-icons">S</i>Savings</div>
+                    <div className="collapsible-header">
+                        <img className="iconCards" align="left" src={save}></img> Savings
+                    </div>
                     <div className="collapsible-body popback">
 
                         <div>

@@ -4,6 +4,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css'
 import M  from 'materialize-css';
 import '../css/pop-css.css'
+import mort from '../img/mort.png'
 
 export class MortgageCard extends Component {
     
@@ -13,7 +14,9 @@ export class MortgageCard extends Component {
         return (
 
             <li>
-            <div className="collapsible-header"><i className="material-icons">M</i>Mortgages</div>
+            <div className="collapsible-header">
+                <img className="iconCards" align="left" src={mort}></img>Mortgage
+            </div>
             <div className="collapsible-body popback">
                 <div>
                     <div className = "popwidth"><b>Account holder: </b> {currentName}</div>
