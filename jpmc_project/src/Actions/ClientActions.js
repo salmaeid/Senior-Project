@@ -25,3 +25,34 @@ export const logOut = () => {
         type: 'LOG_OUT'
     }
 }
+
+export const getHelp = () => {
+    return{
+        type: 'GET_HELP'
+    }
+}
+
+export const sendActionMessage = (msg) => {
+    return{
+        type: 'SEND_MSG',
+        msg: msg
+    }
+}
+
+export const listenAction = (msg) =>{
+
+    return{
+        type: 'LISTEN_MSG',
+        msg: msg
+    }
+
+}
+
+export const fetchAction = (msg) =>{
+
+    return{
+        type: 'FETCH_MSG',
+        msg: msg
+    }
+
+}

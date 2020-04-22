@@ -18,6 +18,8 @@ export class AppsView extends Component {
             var elems = document.querySelectorAll('.collapsible');
             var instances = M.Collapsible.init(elems, options);
           });
+
+        console.log('MOUNTED')
     }
     render() {
 

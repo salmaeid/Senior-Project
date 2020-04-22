@@ -5,6 +5,7 @@ import {logIn} from '../Actions/ClientActions'
 import 'materialize-css/dist/css/materialize.min.css';
 import '../css/login-css.css'
 
+
 export class LogIn extends Component {
 
     state = {
@@ -20,6 +21,7 @@ export class LogIn extends Component {
         e.preventDefault();
         console.log(this.state)
         this.props.logIn(this.state)
+
     }
     render() {
         const {path, authError} = this.props
@@ -58,7 +60,7 @@ export class LogIn extends Component {
                                             <div className="red-text">
                                                 {authError ? <p>{authError}</p>: null}
                                             </div>
-                                            <button className="btn blue darken-3  z-depth-0" onClick={this.handleSubmit} >Log On</button>
+                                            <button className="btn blue darken-2  z-depth-0" onClick={this.handleSubmit} >Log On</button>
                                 
                                         </div>
                                     </form>

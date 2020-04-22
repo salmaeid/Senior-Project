@@ -1,0 +1,70 @@
+.chatWindow{
+    max-height: 475px;
+    overflow-y: auto;
+
+    
+}
+
+.sender-wrap{
+    display: block;
+    text-align: right;
+
+    margin: 0px;
+    padding: 0px;
+
+    
+   
+
+}
+.receiver-wrap{
+    display: block;
+    text-align: left;
+
+    margin: 0px;
+    padding: 0px;
+    
+    
+   
+}
+
+.sender-bubble{
+
+    display: inline-block;
+
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border-radius: 18px;
+
+    background-color: rgb(47, 102, 219);
+    color: white;
+   
+
+
+}
+
+.receiver-bubble{
+   
+    display: inline-block;
+
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border-radius: 18px;
+
+    background-color: gray;
+    color: white;
+
+}

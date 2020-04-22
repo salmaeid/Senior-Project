@@ -11,6 +11,7 @@ import Sidebar from './Sidebar'
 import clientIcon from '../img/client.png'
 import chatIcon from '../img/chat.png'
 import appsIcon from '../img/apps.png'
+import Chat from './Chat'
 
 
 
@@ -38,12 +39,13 @@ export class Dashborad extends Component {
                 </div>
                 
 
-                <div className= "col s3 grey lighten-1 z-depth-4 full-width no-padding">
+                <div className= "col s3 grey lighten-1 z-depth-4 full-width no-padding chatPosition">
 
                     <div className="section grey darken-1 no-padding headerHeight">
                         <img className="headerIcon" align="left" src={chatIcon}></img>
                         <p className="headerText">Chat</p>
                     </div>
+                    <Chat/>
                 </div>
 
                 <div className= "col s4 grey lighten-1 z-depth-4 full-width no-padding">
